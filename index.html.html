@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melech'et Ha'Aretz | Artisan Workshops & Family Experiences in Israel</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for premium serif and clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            beige: '#F4EFEA',      // Soft background sand tone
+                            darkBeige: '#EBE3DA',  // Richer sand tone
+                            olive: '#5A6E4F',      // Primary earthy green
+                            oliveDark: '#45553C',  // Darker green for hover/headers
+                            terracotta: '#C68B6E', // Warm accent color for prices/labels
+                            charcoal: '#2D2926',   // High readability deep tone
+                            lightOlive: '#F0F3EE', // Light green background tint
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2D2926;
+            background-color: #F4EFEA;
+        }
+        .serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        /* Custom scrollbar to keep it looking premium */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4EFEA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C68B6E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A87156;
+        }
+        /* Fluid transitions for sliding containers */
+        .slide-container {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 bg-brand-beige/95 backdrop-blur-md border-b border-brand-darkBeige/50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Brand Logo Info -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full border border-brand-olive flex items-center justify-center bg-white/50 text-brand-olive group-hover:bg-brand-olive group-hover:text-white transition-all duration-300">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div>
+                    <span class="block text-xl md:text-2xl font-semibold tracking-wide serif-title text-brand-charcoal uppercase">Melech'et Ha'Aretz</span>
+                    <span class="block text-xs tracking-widest text-brand-olive uppercase italic">Art of the Land</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-olive transition-colors">Our Ethos</a>
+                <a href="#workshops" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-olive transition-colors">Workshops</a>
+                <a href="#calculator" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-olive transition-colors">Price Calculator</a>
+                <a href="#hallel" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-olive transition-colors">Meet Hallel</a>
+                <a href="#contact" class="bg-brand-olive text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-oliveDark shadow-sm hover:shadow-md transition-all">Book Experience</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-brand-charcoal hover:text-brand-olive focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-olive">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden bg-brand-beige border-b border-brand-darkBeige" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-brand-charcoal hover:bg-brand-darkBeige/50">Our Ethos</a>
+            <a href="#workshops" class="block px-3 py-2 rounded-md text-base font-medium text-brand-charcoal hover:bg-brand-darkBeige/50">Workshops</a>
+            <a href="#calculator" class="block px-3 py-2 rounded-md text-base font-medium text-brand-charcoal hover:bg-brand-darkBeige/50">Price Calculator</a>
+            <a href="#hallel" class="block px-3 py-2 rounded-md text-base font-medium text-brand-charcoal hover:bg-brand-darkBeige/50">Meet Hallel</a>
+            <a href="#contact" class="block w-full text-center mt-2 bg-brand-olive text-white px-4 py-2.5 rounded-full text-base font-medium hover:bg-brand-oliveDark">Book Experience</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="relative overflow-hidden pt-12 pb-20 md:py-32 bg-gradient-to-b from-brand-beige to-brand-lightOlive">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Hero Text -->
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-brand-olive/10 border border-brand-olive/20 text-brand-olive px-4 py-1.5 rounded-full text-sm font-medium">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-olive opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-olive"></span>
+                    </span>
+                    <span>Boutique Intergenerational Family Experiences</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-brand-charcoal serif-title leading-tight">
+                    Experience Ancient Israel <br class="hidden sm:inline" />
+                    <span class="font-normal italic text-brand-olive">Through Your Own Hands</span>
+                </h1>
+                
+                <p class="text-lg text-brand-charcoal/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Set in the timeless Jerusalem hills or within private Jerusalem homes, our handcrafted, slow-paced workshops invite families to touch, taste, craft, and connect deeply with generations of Jewish tradition.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="#workshops" class="w-full sm:w-auto text-center bg-brand-olive text-white px-8 py-4 rounded-full font-medium text-base hover:bg-brand-oliveDark shadow-lg hover:shadow-xl transition-all duration-300">
+                        Explore Workshops
+                    </a>
+                    <a href="#calculator" class="w-full sm:w-auto text-center bg-white border border-brand-darkBeige text-brand-charcoal px-8 py-4 rounded-full font-medium text-base hover:bg-brand-beige hover:border-brand-olive/50 transition-all duration-300">
+                        Interactive Calculator
+                    </a>
+                </div>
+
+                <!-- Fast Info Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-brand-darkBeige/60">
+                    <div class="text-center lg:text-left">
+                        <span class="block text-2xl font-bold text-brand-olive serif-title">5+</span>
+                        <span class="block text-xs text-brand-charcoal/60 uppercase tracking-widest">Ages Welcome</span>
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <span class="block text-2xl font-bold text-brand-olive serif-title">EN / HE</span>
+                        <span class="block text-xs text-brand-charcoal/60 uppercase tracking-widest">Languages</span>
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <span class="block text-2xl font-bold text-brand-olive serif-title">Custom</span>
+                        <span class="block text-xs text-brand-charcoal/60 uppercase tracking-widest">Group Formats</span>
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <span class="block text-2xl font-bold text-brand-olive serif-title">Jerusalem</span>
+                        <span class="block text-xs text-brand-charcoal/60 uppercase tracking-widest">Hills & Studios</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Logo Frame Emblem (Simulating the beautiful Page 1 Image) -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full border-2 border-dashed border-brand-olive/30 p-4 flex items-center justify-center bg-white/40 backdrop-blur-sm shadow-xl">
+                    <div class="w-full h-full rounded-full bg-[#fdfaf6] border border-brand-olive/20 p-8 flex flex-col justify-center items-center text-center shadow-inner relative">
+                        <!-- Floral Top Accent -->
+                        <div class="text-brand-olive/60 mb-2">
+                            <i class="fa-solid fa-feather-pointed text-lg"></i>
+                        </div>
+                        
+                        <!-- Circular text frame -->
+                        <h2 class="text-3xl sm:text-4xl font-normal text-brand-charcoal serif-title tracking-wide">
+                            Melechet<br/>Ha'aretz
+                        </h2>
+                        
+                        <!-- Divider Line with leaf -->
+                        <div class="w-24 h-[1px] bg-brand-charcoal/20 my-4 relative flex justify-center items-center">
+                            <span class="bg-[#fdfaf6] px-2 text-brand-olive text-xs">🌿</span>
+                        </div>
+                        
+                        <p class="text-sm sm:text-md italic tracking-widest text-brand-olive font-light serif-title">
+                            art of the land
+                        </p>
+                        
+                        <!-- Little Olive Branch Frame Overlay -->
+                        <div class="absolute -inset-2 border border-brand-olive/10 rounded-full pointer-events-none scale-[1.03]"></div>
+                    </div>
+                    <!-- Decorative Floating Badges -->
+                    <div class="absolute top-4 right-4 bg-white px-3 py-1.5 rounded-full text-xs text-brand-olive font-medium shadow-md border border-brand-beige flex items-center gap-1.5">
+                        <i class="fa-solid fa-map-location-dot"></i> Authentic Israel
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- Organic Wave Divider -->
+    <div class="absolute bottom-0 left-0 right-0 h-12 bg-brand-beige"></div>
+</section>
+
+<!-- Ethos / Experience Section -->
+<section id="about" class="py-20 bg-brand-beige">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 space-y-4">
+            <h2 class="text-xs uppercase tracking-widest text-brand-olive font-semibold">Slow Down & Create Together</h2>
+            <p class="text-3xl sm:text-4xl font-light text-brand-charcoal serif-title">Private artisan workshops and immersive family experiences</p>
+            <div class="w-16 h-0.5 bg-brand-terracotta mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 border border-brand-darkBeige/40 relative group overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-brand-lightOlive rounded-bl-full -z-0 group-hover:bg-brand-olive/10 transition-colors duration-300"></div>
+                <div class="relative z-10 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-olive/10 flex items-center justify-center text-brand-olive text-xl">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="text-xl font-medium serif-title text-brand-charcoal">Slow Down Your Itinerary</h3>
+                    <p class="text-brand-charcoal/70 text-sm leading-relaxed">
+                        In the midst of a busy Israel tour schedule, these boutique workshops offer an exquisite opportunity to pause, breathe, and gather with your loved ones.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 border border-brand-darkBeige/40 relative group overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-brand-lightOlive rounded-bl-full -z-0 group-hover:bg-brand-olive/10 transition-colors duration-300"></div>
+                <div class="relative z-10 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-olive/10 flex items-center justify-center text-brand-olive text-xl">
+                        <i class="fa-solid fa-users-line"></i>
+                    </div>
+                    <h3 class="text-xl font-medium serif-title text-brand-charcoal">Intergenerational Connection</h3>
+                    <p class="text-brand-charcoal/70 text-sm leading-relaxed">
+                        Thoughtfully tailored for Bar/Bat Mitzvah celebrations, multi-generational families, and deep travelers. Perfect for ages 5 through grandparents.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 border border-brand-darkBeige/40 relative group overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-brand-lightOlive rounded-bl-full -z-0 group-hover:bg-brand-olive/10 transition-colors duration-300"></div>
+                <div class="relative z-10 space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-olive/10 flex items-center justify-center text-brand-olive text-xl">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="text-xl font-medium serif-title text-brand-charcoal">Handcrafted Keepsake</h3>
+                    <p class="text-brand-charcoal/70 text-sm leading-relaxed">
+                        Every participant crafts their own physical piece of heritage—a stone mosaic, handcarved oil lamp, or custom blended herbal spice set to cherish forever.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlight Banner -->
+        <div class="mt-16 bg-brand-lightOlive border border-brand-olive/10 rounded-3xl p-8 md:p-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-medium text-brand-charcoal serif-title">Tailored and Accommodating</h3>
+                    <p class="text-brand-charcoal/80 text-sm leading-relaxed">
+                        We care deeply about your family's comfort and experience. Each workshop is adaptive to different observance levels, special dietary interests, and family structures. Sessions can occur in beautiful open-air environments or climate-controlled private settings.
+                    </p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-brand-charcoal/90">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-olive"></i> English & Hebrew guidance</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-olive"></i> Day and evening availability</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-olive"></i> Outdoors or Air-Conditioned</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-olive"></i> Adapted to kosher requirements</li>
+                    </ul>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden shadow-md aspect-video">
+                    <!-- Displaying Grapes/Shabbat Hands Image representing warmth and family connection -->
+                    <img src="“A Taste of Ancient Israel” Culinary Workshop 1.jpeg" alt="Grapes processing for fresh juice welcoming Shabbat" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x450/e0e5dd/333333?text=Art+of+the+Land+Tradition'">
+                    <div class="absolute bottom-3 right-3 bg-brand-charcoal/70 text-white backdrop-blur-sm px-3 py-1 rounded-full text-xs">
+                        Grape processing for seasonal Shabbat juice
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Workshops Section -->
+<section id="workshops" class="py-20 bg-gradient-to-b from-brand-beige via-white to-brand-beige">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16 space-y-4">
+            <h2 class="text-xs uppercase tracking-widest text-brand-olive font-semibold">Handcrafted Experiences</h2>
+            <p class="text-3xl sm:text-4xl font-light text-brand-charcoal serif-title">Our Boutique Workshops</p>
+            <p class="text-brand-charcoal/75 max-w-xl mx-auto text-sm">Our interactive carousels below display real-life scenes from Hallel's workshops. Drag, swipe, or click to explore.</p>
+            <div class="w-16 h-0.5 bg-brand-terracotta mx-auto mt-2"></div>
+        </div>
+
+        <!-- 1. Culinary Workshop -->
+        <div class="bg-white rounded-3xl border border-brand-darkBeige/60 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+                <!-- Image Gallery Slideshow Column -->
+                <div class="lg:col-span-5 relative bg-brand-lightOlive flex flex-col justify-between" id="slideshow-culinary-container">
+                    <!-- Main Slideshow Viewport -->
+                    <div class="relative aspect-square w-full overflow-hidden group">
+                        <!-- Left Navigation Arrow -->
+                        <button onclick="prevSlide('culinary')" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-brand-charcoal shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <!-- Right Navigation Arrow -->
+                        <button onclick="nextSlide('culinary')" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-brand-charcoal shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Slidable Image Wrapper -->
+                        <div class="flex h-full slide-container" id="slider-culinary" style="transform: translateX(0%);">
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="“A Taste of Ancient Israel” Culinary Workshop 1.jpeg" alt="Culinary Workshop Process 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Culinary+Workshop+1'">
+                            </div>
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="“A Taste of Ancient Israel” Culinary Workshop 2.jpeg" alt="Culinary Workshop Process 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Culinary+Workshop+2'">
+                            </div>
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="“A Taste of Ancient Israel” Culinary Workshop 3.jpeg" alt="Culinary Workshop Process 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Culinary+Workshop+3'">
+                            </div>
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="“A Taste of Ancient Israel” Culinary Workshop 4.jpeg" alt="Culinary Workshop Process 4" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Culinary+Workshop+4'">
+                            </div>
+                        </div>
+
+                        <!-- Absolute Badge Overlay -->
+                        <div class="absolute top-4 left-4 z-10 bg-brand-olive text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">
+                            Culinary Experience
+                        </div>
+
+                        <!-- Slideshow Page Indicator Dots -->
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+                            <button onclick="goToSlide('culinary', 0)" class="w-2.5 h-2.5 rounded-full bg-white shadow-sm transition-all duration-300" id="dot-culinary-0"></button>
+                            <button onclick="goToSlide('culinary', 1)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-culinary-1"></button>
+                            <button onclick="goToSlide('culinary', 2)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-culinary-2"></button>
+                            <button onclick="goToSlide('culinary', 3)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-culinary-3"></button>
+                        </div>
+                    </div>
+
+                    <!-- Thumbnails Strip selection -->
+                    <div class="p-4 bg-brand-darkBeige/40 border-t border-brand-darkBeige/60">
+                        <p class="text-[11px] text-brand-charcoal/60 mb-2 uppercase tracking-wider font-semibold">Interact or Pause Autoplay</p>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button onclick="goToSlide('culinary', 0)" id="thumb-culinary-0" class="border-2 border-brand-olive rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="“A Taste of Ancient Israel” Culinary Workshop 1.jpeg" alt="Culinary Thumbnail 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=1'">
+                            </button>
+                            <button onclick="goToSlide('culinary', 1)" id="thumb-culinary-1" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="“A Taste of Ancient Israel” Culinary Workshop 2.jpeg" alt="Culinary Thumbnail 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=2'">
+                            </button>
+                            <button onclick="goToSlide('culinary', 2)" id="thumb-culinary-2" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="“A Taste of Ancient Israel” Culinary Workshop 3.jpeg" alt="Culinary Thumbnail 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=3'">
+                            </button>
+                            <button onclick="goToSlide('culinary', 3)" id="thumb-culinary-3" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="“A Taste of Ancient Israel” Culinary Workshop 4.jpeg" alt="Culinary Thumbnail 4" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=4'">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Column -->
+                <div class="lg:col-span-7 p-8 md:p-12 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <h3 class="text-2xl sm:text-3xl font-medium serif-title text-brand-charcoal">1. "A Taste of Ancient Israel" Culinary Workshop</h3>
+                            <span class="inline-block bg-brand-terracotta/10 text-brand-terracotta text-sm font-semibold px-3 py-1 rounded-full border border-brand-terracotta/20">
+                                $850 up to 7 guests
+                            </span>
+                        </div>
+                        
+                        <p class="text-brand-charcoal/80 text-sm leading-relaxed">
+                            A boutique culinary experience inspired by the agricultural traditions, flavors, and rich hospitality of the Land of Israel. Together, families prepare traditional foods rooted in the ancient culinary culture of the region using fresh herbs, olive oil, stone-ground spices, open fire, and handmade breads.
+                        </p>
+
+                        <!-- Menu Prepare list -->
+                        <div class="space-y-3">
+                            <h4 class="text-xs uppercase font-semibold text-brand-olive tracking-wider">What Your Family Prepares Together:</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-brand-charcoal/85">
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Homemade hummus & fresh tehina</div>
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Rich homemade Labaneh</div>
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Traditional pan-fired Shakshuka</div>
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Fresh seasonal salad with wild herbs</div>
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Fresh laffa bread baked on a traditional saj</div>
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Spiced Turkish coffee & herbal wild tea</div>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-brand-charcoal/70 bg-brand-lightOlive p-4 rounded-xl italic">
+                            Families grind heritage spices, knead and bake bread over the flames, and discover the thousands-of-years history of ancient oil, grains, and communal dining. Concludes with a beautiful feast served in nature or inside an atmospheric private Jerusalem home.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-brand-darkBeige flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="block text-xs uppercase tracking-widest text-brand-charcoal/60">Additional Participants</span>
+                            <span class="text-sm font-medium text-brand-charcoal">$100 per extra guest (inc. VAT)</span>
+                        </div>
+                        <a href="#calculator" onclick="selectCalcWorkshop('culinary')" class="w-full sm:w-auto text-center bg-brand-olive text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-oliveDark shadow transition-all">
+                            Estimate & Request This
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Shabbat & Holiday Welcoming -->
+        <div class="bg-white rounded-3xl border border-brand-darkBeige/60 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+                <!-- Image Gallery Slideshow Column -->
+                <div class="lg:col-span-5 relative bg-brand-lightOlive flex flex-col justify-between" id="slideshow-shabbat-container">
+                    <!-- Main Slideshow Viewport -->
+                    <div class="relative aspect-square w-full overflow-hidden group">
+                        <!-- Left Navigation Arrow -->
+                        <button onclick="prevSlide('shabbat')" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-brand-charcoal shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <!-- Right Navigation Arrow -->
+                        <button onclick="nextSlide('shabbat')" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-brand-charcoal shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Slidable Image Wrapper -->
+                        <div class="flex h-full slide-container" id="slider-shabbat" style="transform: translateX(0%);">
+                            <!-- Image 1 -->
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="The Art of Welcoming Shabbat and Holidays-1.jpeg" alt="Preparing grape juice for Shabbat" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Grape+Pressing'">
+                            </div>
+                            <!-- Image 2 -->
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="The Art of Welcoming Shabbat and Holidays-4.jpeg" alt="Making beeswax candles" class="w-full h-full object-cover" >
+                            </div>
+                            <!-- Image 3 -->
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="The Art of Welcoming Shabbat and Holidays-2.jpeg" alt="Finished customized beeswax candle" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Custom+Beeswax+Candles'">
+                            </div>
+                            <!-- Image 4 -->
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="The Art of Welcoming Shabbat and Holidays-3.jpeg" alt="Rolling beeswax candle with kids" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/f4efea/2d2926?text=Rolling+Beeswax'">
+                            </div>
+                        </div>
+
+                        <!-- Absolute Badge Overlay -->
+                        <div class="absolute top-4 left-4 z-10 bg-brand-olive text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">
+                            Shabbat & Holidays
+                        </div>
+
+                        <!-- Slideshow Page Indicator Dots -->
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+                            <button onclick="goToSlide('shabbat', 0)" class="w-2.5 h-2.5 rounded-full bg-white shadow-sm transition-all duration-300" id="dot-shabbat-0"></button>
+                            <button onclick="goToSlide('shabbat', 1)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-shabbat-1"></button>
+                            <button onclick="goToSlide('shabbat', 2)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-shabbat-2"></button>
+                            <button onclick="goToSlide('shabbat', 3)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-shabbat-3"></button>
+                        </div>
+                    </div>
+
+                    <!-- Thumbnails strip -->
+                    <div class="p-4 bg-brand-darkBeige/40 border-t border-brand-darkBeige/60">
+                        <p class="text-[11px] text-brand-charcoal/60 mb-2 uppercase tracking-wider font-semibold">Interact or Pause Autoplay</p>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button onclick="goToSlide('shabbat', 0)" id="thumb-shabbat-0" class="border-2 border-brand-olive rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="The Art of Welcoming Shabbat and Holidays-1.jpeg" alt="Shabbat Thumbnail 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=1'">
+                            </button>
+                            <button onclick="goToSlide('shabbat', 1)" id="thumb-shabbat-1" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="The Art of Welcoming Shabbat and Holidays-4.jpeg" alt="Shabbat Thumbnail 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=2'">
+                            </button>
+                            <button onclick="goToSlide('shabbat', 2)" id="thumb-shabbat-2" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="The Art of Welcoming Shabbat and Holidays-2.jpeg" alt="Shabbat Thumbnail 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=3'">
+                            </button>
+                            <button onclick="goToSlide('shabbat', 3)" id="thumb-shabbat-3" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="The Art of Welcoming Shabbat and Holidays-3.jpeg" alt="Shabbat Thumbnail 4" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=4'">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Column -->
+                <div class="lg:col-span-7 p-8 md:p-12 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <h3 class="text-2xl sm:text-3xl font-medium serif-title text-brand-charcoal">2. The Art of Welcoming Shabbat and Holidays</h3>
+                            <span class="inline-block bg-brand-terracotta/10 text-brand-terracotta text-sm font-semibold px-3 py-1 rounded-full border border-brand-terracotta/20">
+                                $700 up to 7 guests
+                            </span>
+                        </div>
+                        
+                        <p class="text-brand-charcoal/80 text-sm leading-relaxed">
+                            A warm, atmospheric family experience centered around the beautiful sensory traditions, seasonal foods, and handcrafts of Shabbat and the Jewish holidays. Your family will gather to construct sacred keepsakes and sensory items that highlight the warmth of Jewish culture.
+                        </p>
+
+                        <!-- Actions list -->
+                        <div class="space-y-3">
+                            <h4 class="text-xs uppercase font-semibold text-brand-olive tracking-wider">Beautiful Crafts & Creations:</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-brand-charcoal/85">
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Prepare fresh grape juice from clusters</div>
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Make hand-poured beeswax Shabbat candles</div>
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Create a gorgeous Havdalah spice set</div>
+                                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-terracotta"></span> Holiday customized elements</div>
+                            </div>
+                        </div>
+
+                        <!-- Upgrades -->
+                        <div class="border-t border-brand-darkBeige/50 pt-4 space-y-2">
+                            <h4 class="text-xs uppercase font-semibold text-brand-terracotta tracking-wider"><i class="fa-solid fa-star"></i> Optional Upgrades Available:</h4>
+                            <p class="text-xs text-brand-charcoal/85 leading-relaxed">
+                                • <strong>Braid fresh challah:</strong> Requires an accessible home kitchen or hotel delivery. (+ $150 upgrade)<br/>
+                                • <strong>Bake Saj Pita:</strong> Fresh pita over fire with zaatar, local olive oil, labaneh, Turkish coffee & tea. (+ $150 upgrade)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-brand-darkBeige flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="block text-xs uppercase tracking-widest text-brand-charcoal/60">Additional Participants</span>
+                            <span class="text-sm font-medium text-brand-charcoal">$100 per extra guest (inc. VAT)</span>
+                        </div>
+                        <a href="#calculator" onclick="selectCalcWorkshop('shabbat')" class="w-full sm:w-auto text-center bg-brand-olive text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-oliveDark shadow transition-all">
+                            Estimate & Request This
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Crafts Workshop -->
+        <div class="bg-white rounded-3xl border border-brand-darkBeige/60 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+                <!-- Image Gallery Slideshow Column -->
+                <div class="lg:col-span-5 relative bg-brand-lightOlive flex flex-col justify-between" id="slideshow-crafts-container">
+                    <!-- Main Slideshow Viewport -->
+                    <div class="relative aspect-square w-full overflow-hidden group">
+                        <!-- Left Navigation Arrow -->
+                        <button onclick="prevSlide('crafts')" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-brand-charcoal shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <!-- Right Navigation Arrow -->
+                        <button onclick="nextSlide('crafts')" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-brand-charcoal shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Slidable Image Wrapper -->
+                        <div class="flex h-full slide-container" id="slider-crafts" style="transform: translateX(0%);">
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="Ancient Israeli Crafts Workshop -1.jpeg" alt="Ancient Israeli Crafts 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Ancient+Crafts+1'">
+                            </div>
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="Ancient Israeli Crafts Workshop -2.jpeg" alt="Ancient Israeli Crafts 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Ancient+Crafts+2'">
+                            </div>
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="Ancient Israeli Crafts Workshop -3.jpeg" alt="Ancient Israeli Crafts 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Ancient+Crafts+3'">
+                            </div>
+                            <div class="w-full h-full flex-shrink-0">
+                                <img src="Ancient Israeli Crafts Workshop -4.jpeg" alt="Ancient Israeli Crafts 4" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x600/e0e5dd/333333?text=Ancient+Crafts+4'">
+                            </div>
+                        </div>
+
+                        <!-- Absolute Badge Overlay -->
+                        <div class="absolute top-4 left-4 z-10 bg-brand-olive text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">
+                            Artisan Crafts & Carving
+                        </div>
+
+                        <!-- Slideshow Page Indicator Dots -->
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+                            <button onclick="goToSlide('crafts', 0)" class="w-2.5 h-2.5 rounded-full bg-white shadow-sm transition-all duration-300" id="dot-crafts-0"></button>
+                            <button onclick="goToSlide('crafts', 1)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-crafts-1"></button>
+                            <button onclick="goToSlide('crafts', 2)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-crafts-2"></button>
+                            <button onclick="goToSlide('crafts', 3)" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-sm transition-all duration-300" id="dot-crafts-3"></button>
+                        </div>
+                    </div>
+
+                    <!-- Thumbnails strip -->
+                    <div class="p-4 bg-brand-darkBeige/40 border-t border-brand-darkBeige/60">
+                        <p class="text-[11px] text-brand-charcoal/60 mb-2 uppercase tracking-wider font-semibold">Interact or Pause Autoplay</p>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button onclick="goToSlide('crafts', 0)" id="thumb-crafts-0" class="border-2 border-brand-olive rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="Ancient Israeli Crafts Workshop -1.jpeg" alt="Crafts Thumbnail 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=1'">
+                            </button>
+                            <button onclick="goToSlide('crafts', 1)" id="thumb-crafts-1" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="Ancient Israeli Crafts Workshop -2.jpeg" alt="Crafts Thumbnail 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=2'">
+                            </button>
+                            <button onclick="goToSlide('crafts', 2)" id="thumb-crafts-2" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="Ancient Israeli Crafts Workshop -3.jpeg" alt="Crafts Thumbnail 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=3'">
+                            </button>
+                            <button onclick="goToSlide('crafts', 3)" id="thumb-crafts-3" class="border-2 border-transparent rounded-lg overflow-hidden aspect-square focus:outline-none transition-all duration-300">
+                                <img src="Ancient Israeli Crafts Workshop -4.jpeg" alt="Crafts Thumbnail 4" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/e0e5dd/333333?text=4'">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Column -->
+                <div class="lg:col-span-7 p-8 md:p-12 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <h3 class="text-2xl sm:text-3xl font-medium serif-title text-brand-charcoal">3. Ancient Israeli Crafts Workshop</h3>
+                            <span class="inline-block bg-brand-terracotta/10 text-brand-terracotta text-sm font-semibold px-3 py-1 rounded-full border border-brand-terracotta/20">
+                                $700 up to 7 guests
+                            </span>
+                        </div>
+                        
+                        <p class="text-brand-charcoal/80 text-sm leading-relaxed">
+                            A highly tactile, relaxed experience designed to connect participants to regional history. Families design and build their own mosaics, clay oil lamps, natural olive oils, and wild nature dolls using handcarved stone, ancient glass patterns, natural clay, straw, and tile.
+                        </p>
+
+                        <!-- Themes -->
+                        <div class="space-y-3">
+                            <h4 class="text-xs uppercase font-semibold text-brand-olive tracking-wider">Themes & Designs to Choose From:</h4>
+                            <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-brand-charcoal/85">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-olive text-xs"></i> Jerusalem motifs</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-olive text-xs"></i> Shabbat & Holidays</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-olive text-xs"></i> Bar/Bat Mitzvah signs</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-olive text-xs"></i> Family names & symbols</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-olive text-xs"></i> "Chai" or "Shalom" lettering</div>
+                            </div>
+                        </div>
+
+                        <!-- Upgrades -->
+                        <div class="border-t border-brand-darkBeige/50 pt-4 space-y-2">
+                            <h4 class="text-xs uppercase font-semibold text-brand-terracotta tracking-wider"><i class="fa-solid fa-star"></i> Optional Upgrades Available:</h4>
+                            <p class="text-xs text-brand-charcoal/85 leading-relaxed">
+                                • <strong>Braid fresh challah:</strong> Requires kitchen context or delivery. (+ $150 upgrade)<br/>
+                                • <strong>Bake Saj Pita:</strong> Served warm with zaatar, olive oil, and hot herbal teas. (+ $150 upgrade)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-brand-darkBeige flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="block text-xs uppercase tracking-widest text-brand-charcoal/60">Additional Participants</span>
+                            <span class="text-sm font-medium text-brand-charcoal">$100 per extra guest (inc. VAT)</span>
+                        </div>
+                        <a href="#calculator" onclick="selectCalcWorkshop('crafts')" class="w-full sm:w-auto text-center bg-brand-olive text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-oliveDark shadow transition-all">
+                            Estimate & Request This
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Dynamic Booking Calculator Section -->
+<section id="calculator" class="py-20 bg-brand-lightOlive border-y border-brand-darkBeige">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-md border border-brand-darkBeige/50">
+            <div class="text-center space-y-2 mb-8">
+                <span class="text-xs font-semibold text-brand-olive uppercase tracking-widest">Plan Your Experience</span>
+                <h2 class="text-3xl font-light text-brand-charcoal serif-title">Interactive Price Calculator</h2>
+                <p class="text-brand-charcoal/70 text-sm max-w-lg mx-auto">Customize your family workshop size and toggle natural upgrades to calculate an instant custom estimate.</p>
+                <div class="w-12 h-0.5 bg-brand-terracotta mx-auto mt-2"></div>
+            </div>
+
+            <!-- Interactive Widget -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                
+                <!-- Calculator Inputs (7 Cols) -->
+                <div class="md:col-span-7 space-y-6">
+                    <!-- 1. Workshop Select -->
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-charcoal/80 mb-2">1. Select Your Workshop:</label>
+                        <select id="calc-workshop" onchange="calculatePrice()" class="w-full bg-brand-beige border border-brand-darkBeige px-4 py-3 rounded-xl text-brand-charcoal focus:ring-2 focus:ring-brand-olive focus:border-transparent outline-none transition-all">
+                            <option value="culinary">"A Taste of Ancient Israel" Culinary Workshop ($850 up to 7)</option>
+                            <option value="shabbat">The Art of Welcoming Shabbat and Holidays ($700 up to 7)</option>
+                            <option value="crafts">Ancient Israeli Crafts Workshop ($700 up to 7)</option>
+                        </select>
+                    </div>
+
+                    <!-- 2. Guest Count Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-sm font-semibold text-brand-charcoal/80">2. Number of Guests:</label>
+                            <span id="guest-badge" class="bg-brand-olive text-white text-sm font-semibold px-3 py-1 rounded-full">7 Guests</span>
+                        </div>
+                        <input type="range" id="calc-guests" min="1" max="30" value="7" oninput="updateGuestsSlider(this.value)" class="w-full accent-brand-olive bg-brand-beige h-2 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-xs text-brand-charcoal/60 mt-1">
+                            <span>1 Guest</span>
+                            <span>7 Guests (Base pricing threshold)</span>
+                            <span>30+ Guests</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Addon Upgrades -->
+                    <div class="space-y-3">
+                        <label class="block text-sm font-semibold text-brand-charcoal/80">3. Select Optional Upgrades:</label>
+                        
+                        <!-- Upgrade 1: Challah -->
+                        <div class="flex items-start gap-3 p-3 bg-brand-beige/50 rounded-xl border border-brand-darkBeige/40 hover:bg-brand-beige transition-colors">
+                            <input type="checkbox" id="up-challah" onchange="calculatePrice()" class="mt-1 accent-brand-olive h-4 w-4 rounded">
+                            <div>
+                                <span class="block text-sm font-semibold text-brand-charcoal">Braid Fresh Challah (+ $150 flat upgrade)</span>
+                                <span class="block text-xs text-brand-charcoal/75">Requires an accessible home kitchen or hotel kitchen delivery coordinate.</span>
+                            </div>
+                        </div>
+
+                        <!-- Upgrade 2: Saj Bread -->
+                        <div class="flex items-start gap-3 p-3 bg-brand-beige/50 rounded-xl border border-brand-darkBeige/40 hover:bg-brand-beige transition-colors">
+                            <input type="checkbox" id="up-saj" onchange="calculatePrice()" class="mt-1 accent-brand-olive h-4 w-4 rounded">
+                            <div>
+                                <span class="block text-sm font-semibold text-brand-charcoal">Bake Fresh Saj Pita, Coffee & Tea (+ $150 flat upgrade)</span>
+                                <span class="block text-xs text-brand-charcoal/75">Add Saj fire baking with local zaatar, local olive oil, Labaneh, Turkish coffee & field herbs.</span>
+                            </div>
+                        </div>
+
+                        <!-- Upgrade 3: Spring Tour -->
+                        <div class="flex items-start gap-3 p-3 bg-brand-beige/50 rounded-xl border border-brand-darkBeige/40 hover:bg-brand-beige transition-colors">
+                            <input type="checkbox" id="up-spring" onchange="calculatePrice()" class="mt-1 accent-brand-olive h-4 w-4 rounded">
+                            <div>
+                                <span class="block text-sm font-semibold text-brand-charcoal">Natural Spring & Ancient Agriculture Tour (+ $200 flat upgrade)</span>
+                                <span class="block text-xs text-brand-charcoal/75">For outdoor sessions, add an educational guided walk through terraced ancient water systems.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Preview Panel (5 Cols) -->
+                <div class="md:col-span-5 bg-brand-beige/40 rounded-2xl p-6 border border-brand-darkBeige text-center space-y-6">
+                    <div>
+                        <span class="block text-xs text-brand-charcoal/60 uppercase tracking-widest">Estimated Value</span>
+                        <div class="text-4xl font-light text-brand-olive serif-title mt-2">
+                            $<span id="total-price" class="font-bold text-brand-charcoal">850</span>
+                        </div>
+                        <span class="text-xs text-brand-olive/80 italic font-medium">Includes VAT • Fully custom itinerary</span>
+                    </div>
+
+                    <!-- Breakdown Detail Box -->
+                    <div class="bg-white/80 rounded-xl p-4 text-left text-xs space-y-2 border border-brand-darkBeige">
+                        <div class="flex justify-between">
+                            <span>Base Rate:</span>
+                            <span id="breakdown-base">$850</span>
+                        </div>
+                        <div id="additional-guests-row" class="flex justify-between text-brand-charcoal/70">
+                            <span>Additional Guests (<span id="extra-guests-count">0</span>):</span>
+                            <span id="breakdown-extra">$0</span>
+                        </div>
+                        <div id="breakdown-addon-row" class="hidden flex-col border-t border-brand-darkBeige/50 pt-2 text-brand-charcoal/70 space-y-1">
+                            <div class="flex justify-between">
+                                <span>Upgrades & Addons:</span>
+                                <span id="breakdown-addons-total">$0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="applyEstimateToBooking()" class="w-full bg-brand-olive text-white py-3.5 rounded-full font-medium hover:bg-brand-oliveDark shadow-lg transition-all text-sm uppercase tracking-wider">
+                        Use This To Inquire
+                    </button>
+                    
+                    <p class="text-[10px] text-brand-charcoal/60 leading-normal">
+                        Note: Group structures, custom dietary considerations, and specific locations are finalized in friendly dialog. Rates include premium materials and experienced instructors.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Meet Hallel Section -->
+<section id="hallel" class="py-20 bg-brand-beige relative overflow-hidden">
+    <!-- Decorative branch shadow shape representation -->
+    <div class="absolute -right-16 -top-16 opacity-5 text-brand-olive text-9xl">
+        <i class="fa-solid fa-leaf"></i>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Beautiful visual collage for Hallel -->
+            <div class="lg:col-span-5 space-y-6">
+                <!-- Main Carving Hand image emphasizing artisan craft roots -->
+                <div class="relative rounded-3xl overflow-hidden shadow-lg aspect-[4/3] bg-brand-darkBeige">
+                    <img src="Ancient Israeli Crafts Workshop -2.jpeg" alt="Chiseling and carving and ancient oil lamps" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x450/e0e5dd/333333?text=Handmade+Craftsmanship'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <span class="block text-xs uppercase tracking-widest opacity-80">Ancient Skills</span>
+                        <span class="text-sm font-semibold serif-title">Sourcing local Jerusalem white limestone</span>
+                    </div>
+                </div>
+                <!-- Secondary image displaying natural oil lamp craft details -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-2xl overflow-hidden shadow aspect-square bg-brand-darkBeige">
+                        <img src="Ancient Israeli Crafts Workshop -3.jpeg" alt="Pouring olive oil into local carved stone lamp" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/e0e5dd/333333?text=Olive+Oil+Pour'">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow aspect-square bg-brand-darkBeige">
+                        <img src="Ancient Israeli Crafts Workshop -4.jpeg" alt="Carved stone lamp in daylight" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/e0e5dd/333333?text=Finished+Work'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Info Block -->
+            <div class="lg:col-span-7 space-y-6">
+                <span class="text-xs font-semibold text-brand-olive uppercase tracking-widest">Jerusalem Educator & Craftswoman</span>
+                <h2 class="text-4xl font-light text-brand-charcoal serif-title">Meet Hallel Weisberg</h2>
+                <p class="text-xs tracking-wider text-brand-terracotta italic uppercase">Nachlaot Native • Certified Guide • Artisan</p>
+                <div class="w-16 h-0.5 bg-brand-terracotta"></div>
+
+                <div class="text-brand-charcoal/80 space-y-4 text-sm leading-relaxed">
+                    <p>
+                        Hallel Weisberg is a Jerusalem-based educator, guide, and craftswoman, born and raised in the historic, winding alleyways of Nachlaot. 
+                    </p>
+                    <p>
+                        As a certified guide, Hallel leads immersive hands-on workshops for families and groups rooted in ancient crafts and meaningful creation. Her workshops draw heavily from her deep-seated love of nature, ancient skills, and simple human connection.
+                    </p>
+                    <p>
+                        Through her years of experience working with children, adults, and vibrant multi-generational family units, Hallel creates uniquely warm, welcoming settings where visitors can intentionally slow down, explore together, and connect with Jewish traditions beyond conventional touring.
+                    </p>
+                </div>
+
+                <!-- Personal Quote Block -->
+                <blockquote class="border-l-4 border-brand-olive pl-4 italic text-brand-olive text-sm font-serif">
+                    "My passion is inviting families to pause the busy itinerary, step into the slow presence of Jerusalem's history, and create physical souvenirs using materials that have built our history for thousands of years."
+                </blockquote>
+
+                <div class="pt-4">
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-brand-olive text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand-oliveDark shadow hover:shadow-md transition-all">
+                        Inquire directly <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 space-y-2">
+            <span class="text-xs font-semibold text-brand-olive uppercase tracking-widest">Common Questions</span>
+            <h2 class="text-3xl font-light text-brand-charcoal serif-title">Everything You Need To Know</h2>
+            <div class="w-12 h-0.5 bg-brand-terracotta mx-auto mt-2"></div>
+        </div>
+
+        <div class="space-y-4">
+            
+            <!-- FAQ 1 -->
+            <div class="border border-brand-darkBeige rounded-2xl overflow-hidden bg-brand-beige/20">
+                <button onclick="toggleFaq('faq-1')" class="w-full text-left p-6 font-medium text-brand-charcoal flex justify-between items-center hover:bg-brand-beige/40 transition-colors">
+                    <span class="serif-title text-lg">Where are workshops physically conducted?</span>
+                    <i id="faq-1-icon" class="fa-solid fa-chevron-down text-brand-olive transition-transform"></i>
+                </button>
+                <div id="faq-1" class="hidden px-6 pb-6 text-brand-charcoal/80 text-sm leading-relaxed border-t border-brand-darkBeige/30 pt-4">
+                    We coordinate sessions across versatile settings, including gorgeous rustic outdoor terraces in the iconic Jerusalem hills, air-conditioned stone studios in old Jerusalem, or inside private rented apartments/homes. We align on locations depending on seasons, weather, and your family's travel plans.
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="border border-brand-darkBeige rounded-2xl overflow-hidden bg-brand-beige/20">
+                <button onclick="toggleFaq('faq-2')" class="w-full text-left p-6 font-medium text-brand-charcoal flex justify-between items-center hover:bg-brand-beige/40 transition-colors">
+                    <span class="serif-title text-lg">Are workshops kosher and adaptable to observance levels?</span>
+                    <i id="faq-2-icon" class="fa-solid fa-chevron-down text-brand-olive transition-transform"></i>
+                </button>
+                <div id="faq-2" class="hidden px-6 pb-6 text-brand-charcoal/80 text-sm leading-relaxed border-t border-brand-darkBeige/30 pt-4">
+                    Absolutely. Hospitality is at our heart. We source high-quality, kosher-certified ingredients and can strictly align all food prep to kosher parameters, dietary restrictions, and specific Jewish community observance levels. 
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="border border-brand-darkBeige rounded-2xl overflow-hidden bg-brand-beige/20">
+                <button onclick="toggleFaq('faq-3')" class="w-full text-left p-6 font-medium text-brand-charcoal flex justify-between items-center hover:bg-brand-beige/40 transition-colors">
+                    <span class="serif-title text-lg">Which age groups enjoy Melech'et Ha'Aretz best?</span>
+                    <i id="faq-3-icon" class="fa-solid fa-chevron-down text-brand-olive transition-transform"></i>
+                </button>
+                <div id="faq-3" class="hidden px-6 pb-6 text-brand-charcoal/80 text-sm leading-relaxed border-t border-brand-darkBeige/30 pt-4">
+                    Our workshops are designed for ages 5 and up. Grandparents, teenagers, and school-age children find distinct aspects to enjoy simultaneously—making it an ideal landmark experience for multi-generational family vacations and Bar/Bat Mitzvah trip schedules.
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="border border-brand-darkBeige rounded-2xl overflow-hidden bg-brand-beige/20">
+                <button onclick="toggleFaq('faq-4')" class="w-full text-left p-6 font-medium text-brand-charcoal flex justify-between items-center hover:bg-brand-beige/40 transition-colors">
+                    <span class="serif-title text-lg">What happens in the event of hot or cold weather?</span>
+                    <i id="faq-4-icon" class="fa-solid fa-chevron-down text-brand-olive transition-transform"></i>
+                </button>
+                <div id="faq-4" class="hidden px-6 pb-6 text-brand-charcoal/80 text-sm leading-relaxed border-t border-brand-darkBeige/30 pt-4">
+                    We maintain cozy, comfortable indoor private spaces equipped with modern cooling (AC) and warming units to transition to comfortably should the weather be cold, rainy, or excessively hot. Your physical comfort is prioritized.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Booking Inquiry Contact Section -->
+<section id="contact" class="py-20 bg-brand-lightOlive relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-brand-darkBeige text-center space-y-8">
+            
+            <div class="space-y-3">
+                <div class="w-16 h-16 rounded-full bg-brand-olive/10 text-brand-olive flex items-center justify-center text-2xl mx-auto">
+                    <i class="fa-solid fa-address-book"></i>
+                </div>
+                <h2 class="text-3xl font-light text-brand-charcoal serif-title">Get in Touch with Hallel</h2>
+                <p class="text-brand-charcoal/70 text-sm max-w-lg mx-auto">
+                    Ready to design your family memory? Reach out directly via email, phone, or WhatsApp to reserve your dates and customize your artisan workshop.
+                </p>
+                <div class="w-12 h-0.5 bg-brand-terracotta mx-auto"></div>
+            </div>
+
+            <!-- Dynamic Pricing Package Highlight Box -->
+            <div id="contact-estimate-box" class="hidden p-5 bg-brand-beige/60 rounded-2xl border border-brand-olive/20 max-w-xl mx-auto text-left">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-xs uppercase tracking-wider font-semibold text-brand-olive">Your Selected Package</span>
+                    <span id="contact-calculated-display" class="font-bold text-brand-olive serif-title text-2xl">$850</span>
+                </div>
+                <p id="contact-estimate-details" class="text-xs text-brand-charcoal/80 leading-relaxed"></p>
+                <span class="block text-[10px] text-brand-oliveDark/70 mt-2 font-medium italic"><i class="fa-solid fa-circle-info"></i> Clicking the contact buttons below will open your app with these details prefilled!</span>
+            </div>
+
+            <!-- Contact Channels Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto pt-2">
+                <!-- Email Channel -->
+                <a href="mailto:hallelwe@gmail.com" id="contact-email-link" class="flex flex-col items-center justify-center p-6 bg-brand-beige/30 hover:bg-brand-beige/80 border border-brand-darkBeige/60 rounded-2xl transition-all group duration-300">
+                    <div class="w-12 h-12 rounded-full bg-brand-olive text-white flex items-center justify-center text-lg mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-brand-charcoal/50 font-semibold mb-1">Email Hallel Directly</span>
+                    <span class="text-base font-semibold text-brand-charcoal break-all border-b border-brand-olive/20 group-hover:border-brand-olive transition-colors">hallelwe@gmail.com</span>
+                    <span class="text-[10px] text-brand-charcoal/40 mt-2">Open Mail Application</span>
+                </a>
+
+                <!-- Phone & WhatsApp Channel -->
+                <div class="flex flex-col items-center p-6 bg-brand-beige/30 border border-brand-darkBeige/60 rounded-2xl">
+                    <div class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-brand-charcoal/50 font-semibold mb-1">Call / Message</span>
+                    <span class="text-base font-semibold text-brand-charcoal mb-4">+972 52-516-9924</span>
+                    
+                    <div class="flex gap-2 w-full">
+                        <a href="tel:+972525169924" class="flex-1 bg-brand-olive hover:bg-brand-oliveDark text-white py-2.5 px-3 rounded-xl text-xs font-semibold text-center transition-colors">
+                            <i class="fa-solid fa-phone mr-1"></i> Call
+                        </a>
+                        <a href="https://wa.me/972525169924" id="contact-wa-link" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-3 rounded-xl text-xs font-semibold text-center transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1 text-sm align-middle"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-xs text-brand-charcoal/50 pt-4">
+                <p>Based in the Jerusalem hills & old studios (GMT+3). Responses are typically shared within 24–48 hours, excluding Shabbat.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-brand-charcoal text-white pt-16 pb-12 border-t border-brand-darkBeige/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            
+            <!-- Brand Column -->
+            <div class="space-y-4 md:col-span-2">
+                <h3 class="text-2xl font-light serif-title tracking-widest text-brand-beige">MELECH'ET HA'ARETZ</h3>
+                <p class="text-xs tracking-widest text-brand-terracotta uppercase">art of the land</p>
+                <p class="text-sm text-brand-beige/70 max-w-sm leading-relaxed">
+                    Slowing down Israel itineraries to experience the land through your hands, sensory traditions, regional food flavors, and imagination.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-4">
+                <h4 class="text-sm font-semibold uppercase tracking-wider text-brand-beige">Explore</h4>
+                <ul class="space-y-2 text-sm text-brand-beige/60">
+                    <li><a href="#about" class="hover:text-brand-terracotta transition-colors">Our Philosophy</a></li>
+                    <li><a href="#workshops" class="hover:text-brand-terracotta transition-colors">Boutique Workshops</a></li>
+                    <li><a href="#calculator" class="hover:text-brand-terracotta transition-colors">Cost Calculator</a></li>
+                    <li><a href="#hallel" class="hover:text-brand-terracotta transition-colors">Meet Hallel Weisberg</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact/Specs Info -->
+            <div class="space-y-4">
+                <h4 class="text-sm font-semibold uppercase tracking-wider text-brand-beige">Specs</h4>
+                <ul class="space-y-2 text-sm text-brand-beige/60">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-earth-americas text-brand-terracotta"></i> Jerusalem Hills & Studios</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-baby-carriage text-brand-terracotta"></i> Ages 5+ (Kids & Elders)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-brand-terracotta"></i> Comfort Accommodations</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-language text-brand-terracotta"></i> English & Hebrew</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="border-t border-white/10 pt-8 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-brand-beige/40">
+            <p>© 2026 Melech’et Ha’Aretz. All rights reserved. Handcrafted in Jerusalem.</p>
+            <div class="flex items-center gap-4">
+                <span>Designed for family travel, Bar/Bat Mitzvah trips, and authentic memories.</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Global Slideshow State Management
+    const slideshowStates = {
+        culinary: {
+            activeIndex: 0,
+            slideCount: 4,
+            intervalId: null
+        },
+        shabbat: {
+            activeIndex: 0,
+            slideCount: 4,
+            intervalId: null
+        },
+        crafts: {
+            activeIndex: 0,
+            slideCount: 4,
+            intervalId: null
+        }
+    };
+
+    // Initialize & Handle Automatic Slideshow Rotations
+    function initAutoplay(slideshowKey) {
+        if (slideshowStates[slideshowKey].intervalId) {
+            clearInterval(slideshowStates[slideshowKey].intervalId);
+        }
+        slideshowStates[slideshowKey].intervalId = setInterval(() => {
+            nextSlide(slideshowKey);
+        }, 5000); // Transitions to next image every 5 seconds
+    }
+
+    function pauseAutoplay(slideshowKey) {
+        if (slideshowStates[slideshowKey].intervalId) {
+            clearInterval(slideshowStates[slideshowKey].intervalId);
+            slideshowStates[slideshowKey].intervalId = null;
+        }
+    }
+
+    // Go directly to specified index
+    function goToSlide(slideshowKey, index) {
+        const state = slideshowStates[slideshowKey];
+        state.activeIndex = (index + state.slideCount) % state.slideCount;
+        
+        // Offset slide container transform
+        const slider = document.getElementById(`slider-${slideshowKey}`);
+        if (slider) {
+            slider.style.transform = `translateX(-${state.activeIndex * 100}%)`;
+        }
+
+        // Update dots state
+        for (let i = 0; i < state.slideCount; i++) {
+            const dot = document.getElementById(`dot-${slideshowKey}-${i}`);
+            if (dot) {
+                if (i === state.activeIndex) {
+                    dot.classList.remove('bg-white/50');
+                    dot.classList.add('bg-white', 'scale-110');
+                } else {
+                    dot.classList.remove('bg-white', 'scale-110');
+                    dot.classList.add('bg-white/50');
+                }
+            }
+
+            // Update border states on thumbnails strip if thumbnail buttons exist
+            const thumb = document.getElementById(`thumb-${slideshowKey}-${i}`);
+            if (thumb) {
+                if (i === state.activeIndex) {
+                    thumb.classList.remove('border-transparent');
+                    thumb.classList.add('border-brand-olive');
+                } else {
+                    thumb.classList.remove('border-brand-olive');
+                    thumb.classList.add('border-transparent');
+                }
+            }
+        }
+        
+        // Reset Autoplay timer on manual interactions
+        initAutoplay(slideshowKey);
+    }
+
+    // Previous / Next Slide controllers
+    function prevSlide(slideshowKey) {
+        const state = slideshowStates[slideshowKey];
+        goToSlide(slideshowKey, state.activeIndex - 1);
+    }
+
+    function nextSlide(slideshowKey) {
+        const state = slideshowStates[slideshowKey];
+        goToSlide(slideshowKey, state.activeIndex + 1);
+    }
+
+    // Add touch swipe detection
+    function registerSwipeListeners(slideshowKey) {
+        const container = document.getElementById(`slideshow-${slideshowKey}-container`);
+        if (!container) return;
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            pauseAutoplay(slideshowKey); // Pause temporarily on touch
+        }, { passive: true });
+
+        container.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const threshold = 50; // Minimum distance for swipe
+            if (touchStartX - touchEndX > threshold) {
+                nextSlide(slideshowKey); // Swiped Left
+            } else if (touchEndX - touchStartX > threshold) {
+                prevSlide(slideshowKey); // Swiped Right
+            } else {
+                initAutoplay(slideshowKey); // Resume normal timing if no swipe
+            }
+        }
+
+        // Pause slideshows when mouse hovers, resume on mouse leave
+        container.addEventListener('mouseenter', () => pauseAutoplay(slideshowKey));
+        container.addEventListener('mouseleave', () => initAutoplay(slideshowKey));
+    }
+
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.className = "fa-solid fa-bars text-2xl";
+        } else {
+            menuIcon.className = "fa-solid fa-xmark text-2xl";
+        }
+    });
+
+    // Close mobile menu on clicking links
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.className = "fa-solid fa-bars text-2xl";
+        });
+    });
+
+    // Toggle FAQ Accordions
+    function toggleFaq(faqId) {
+        const answer = document.getElementById(faqId);
+        const icon = document.getElementById(`${faqId}-icon`);
+        
+        if (answer.classList.contains('hidden')) {
+            answer.classList.remove('hidden');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        } else {
+            answer.classList.add('hidden');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    }
+
+    // Interactive Real-Time Pricing Calculator Logic
+    function updateGuestsSlider(val) {
+        document.getElementById('guest-badge').innerText = `${val} Guests`;
+        calculatePrice();
+    }
+
+    function calculatePrice() {
+        const workshop = document.getElementById('calc-workshop').value;
+        const guests = parseInt(document.getElementById('calc-guests').value);
+        
+        // Upgrades checkboxes
+        const upChallah = document.getElementById('up-challah').checked;
+        const upSaj = document.getElementById('up-saj').checked;
+        const upSpring = document.getElementById('up-spring').checked;
+
+        // Base rate settings
+        let basePrice = 700;
+        let baseThreshold = 7;
+        
+        if (workshop === 'culinary') {
+            basePrice = 850;
+        }
+
+        // Additional guest pricing
+        let extraGuests = Math.max(0, guests - baseThreshold);
+        let extraCost = extraGuests * 100;
+
+        // Upgrade flat fees
+        let upgradeCost = 0;
+        if (upChallah) upgradeCost += 150;
+        if (upSaj) upgradeCost += 150;
+        if (upSpring) upgradeCost += 200;
+
+        const total = basePrice + extraCost + upgradeCost;
+
+        // Update UI
+        document.getElementById('total-price').innerText = total;
+        document.getElementById('breakdown-base').innerText = `$${basePrice}`;
+        document.getElementById('extra-guests-count').innerText = extraGuests;
+        document.getElementById('breakdown-extra').innerText = `$${extraCost}`;
+
+        const addonRow = document.getElementById('breakdown-addon-row');
+        if (upgradeCost > 0) {
+            addonRow.classList.remove('hidden');
+            addonRow.classList.add('flex');
+            document.getElementById('breakdown-addons-total').innerText = `$${upgradeCost}`;
+        } else {
+            addonRow.classList.add('hidden');
+            addonRow.classList.remove('flex');
+        }
+
+        // Synchronize with dynamic prefilled inquiry text if contact estimate display is already active
+        const estBox = document.getElementById('contact-estimate-box');
+        if (estBox && !estBox.classList.contains('hidden')) {
+            updatePrefilledLinks(workshop, guests, upChallah, upSaj, upSpring, total);
+        }
+    }
+
+    // External helper to select and focus on calculator when workshop cta is pressed
+    function selectCalcWorkshop(workshopKey) {
+        document.getElementById('calc-workshop').value = workshopKey;
+        calculatePrice();
+        document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Dynamic prefilled links generator
+    function updatePrefilledLinks(workshopKey, guests, upChallah, upSaj, upSpring, total) {
+        let workshopName = "";
+        if (workshopKey === "culinary") {
+            workshopName = '"A Taste of Ancient Israel" Culinary Workshop';
+        } else if (workshopKey === "shabbat") {
+            workshopName = 'The Art of Welcoming Shabbat and Holidays';
+        } else {
+            workshopName = 'Ancient Israeli Crafts Workshop';
+        }
+
+        let upgrades = [];
+        if (upChallah) upgrades.push("Braid Fresh Challah");
+        if (upSaj) upgrades.push("Bake Saj Pita");
+        if (upSpring) upgrades.push("Natural Spring Tour");
+        const upgradeText = upgrades.length > 0 ? " with upgrades: " + upgrades.join(", ") : "";
+
+        const messageText = `Hi Hallel, I would like to inquire about booking the "${workshopName}" for ${guests} guests${upgradeText}. Our calculated price estimate is $${total}.`;
+
+        // Update WhatsApp
+        const waLink = document.getElementById('contact-wa-link');
+        if (waLink) {
+            waLink.href = `https://wa.me/972525169924?text=${encodeURIComponent(messageText)}`;
+        }
+
+        // Update Email
+        const emailLink = document.getElementById('contact-email-link');
+        if (emailLink) {
+            emailLink.href = `mailto:hallelwe@gmail.com?subject=Melechet Ha'aretz Experience Inquiry&body=${encodeURIComponent(messageText)}`;
+        }
+
+        // Update Display Box
+        const estBox = document.getElementById('contact-estimate-box');
+        const estDisplay = document.getElementById('contact-calculated-display');
+        const estDetails = document.getElementById('contact-estimate-details');
+        
+        if (estBox && estDisplay && estDetails) {
+            estDisplay.innerText = `$${total}`;
+            estDetails.innerText = `Requested: ${workshopName} for ${guests} guests${upgradeText}.`;
+            estBox.classList.remove('hidden');
+        }
+    }
+
+    // Pull calculator choices directly down into the contact links
+    function applyEstimateToBooking() {
+        const workshop = document.getElementById('calc-workshop').value;
+        const guests = document.getElementById('calc-guests').value;
+        const upChallah = document.getElementById('up-challah').checked;
+        const upSaj = document.getElementById('up-saj').checked;
+        const upSpring = document.getElementById('up-spring').checked;
+        const total = document.getElementById('total-price').innerText;
+
+        updatePrefilledLinks(workshop, guests, upChallah, upSaj, upSpring, total);
+
+        // Scroll down to contact section
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Run basic initialization
+    window.onload = function() {
+        // Run pricing calculation
+        calculatePrice();
+
+        // Initialize active class states for dots & carousels
+        Object.keys(slideshowStates).forEach(slideshowKey => {
+            goToSlide(slideshowKey, 0);
+            initAutoplay(slideshowKey);
+            registerSwipeListeners(slideshowKey);
+        });
+    }
+</script>
+
+</body>
+</html>
